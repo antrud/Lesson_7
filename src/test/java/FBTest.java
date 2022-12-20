@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
@@ -6,9 +7,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class FBTest {
-
-    final static String CHROME_DRIVER_PATH = "/Users/anton/Documents/automation/Lesson_7/src/main/resources/chromedriver";
-
     protected static WebDriver driver;
 
     static String firstName = "Anton";
@@ -20,8 +18,7 @@ public class FBTest {
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.chromedriver.driver", CHROME_DRIVER_PATH);
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();;
     }
 
     @Test
