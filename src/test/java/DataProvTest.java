@@ -1,8 +1,8 @@
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -22,8 +22,7 @@ public class DataProvTest {
 
     @BeforeTest
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/Users/anton/Documents/automation/try_solo_testng/resoureces/chromedriver/chromedriver");
-        driver = new ChromeDriver();
+        driver = WebDriverManager.chromedriver().create();;
     }
 
     @Test(dataProvider = "dp")
