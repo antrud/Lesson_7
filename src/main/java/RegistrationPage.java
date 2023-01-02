@@ -31,10 +31,10 @@ public class RegistrationPage {
     @FindBy(xpath = "//*[@id='year']")
     public WebElement ddYear;
 
-    @FindBy(xpath = "//*[contains(text(),'Male')]")
+    @FindBy(xpath = "//*[@name='sex' and @value='2']")
     public WebElement chbGenderMale;
 
-    @FindBy(xpath = "//*[contains(text(),'Female')]")
+    @FindBy(xpath = "//*[@name='sex' and @value='1']")
     public WebElement chbGenderFemale;
 
     @FindBy(xpath = "//*[@name='websubmit']")
